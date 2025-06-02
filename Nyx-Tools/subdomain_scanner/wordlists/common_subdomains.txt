@@ -1,0 +1,1232 @@
+# --- Common Web Prefixes ---
+www
+www1
+www2
+www3
+ww
+wwww
+web
+website
+portal
+home
+site
+main
+default
+live
+prod
+production
+stage
+staging
+dev
+development
+test
+testing
+demo
+preview
+beta
+alpha
+new
+old
+v1
+v2
+v3
+
+# --- Mail Related ---
+mail
+smtp
+pop
+pop3
+imap
+webmail
+email
+owa
+exchange
+mta
+mx
+mx1
+mx2
+newsletter
+subscribe
+unsubscribe
+campaign
+autodiscover # For Exchange
+
+# --- FTP / File Transfer ---
+ftp
+sftp
+files
+download
+downloads
+upload
+uploads
+assets
+static
+cdn
+media
+images
+img
+pics
+photos
+video
+videos
+docs
+documents
+public
+share
+
+# --- DNS / Network Infrastructure ---
+dns
+dns1
+dns2
+dns3
+dns4
+ns
+ns1
+ns2
+ns3
+ns4
+ns5
+resolver
+gateway
+router
+firewall
+vpn
+proxy
+intranet
+extranet
+internal
+external
+remote
+backup
+cluster
+loadbalancer
+lb
+master
+slave
+primary
+secondary
+host
+server
+node
+cloud
+
+# --- Admin / Management ---
+admin
+administrator
+adm
+manager
+manage
+webadmin
+cpanel
+whm
+plesk
+control
+dashboard
+panel
+config
+settings
+root
+sysadmin
+devops
+monitor
+monitoring
+stats
+analytics
+nagios
+zabbix
+grafana
+prometheus
+elk
+log
+logs
+logging
+
+# --- Development / Staging / Testing ---
+dev
+develop
+developer
+developers
+dev-api
+dev-app
+dev-db
+dev-test
+dev-uat
+stage
+staging-api
+staging-app
+uat
+qa
+test
+testing-api
+testing-app
+sandbox
+demo
+prototype
+build
+ci
+cd
+jenkins
+gitlab
+github
+travis
+docker
+kube
+kubernetes
+vagrant
+local
+localhost # Usually resolves locally, but some internal nets might use it
+
+# --- API Related ---
+api
+api-v1
+api-v2
+api-v3
+api-dev
+api-stage
+api-prod
+rest
+graphql
+soap
+xmlrpc
+jsonrpc
+service
+services
+microservice
+gateway-api
+
+# --- Blog / Content ---
+blog
+blogs
+news
+press
+updates
+forum
+community
+support
+help
+faq
+wiki
+docs
+documentation
+kb # Knowledge Base
+status
+info
+about
+contact
+jobs
+careers
+presskit
+
+# --- E-commerce / Shop ---
+shop
+store
+ecommerce
+cart
+checkout
+payment
+payments
+billing
+invoice
+order
+orders
+catalog
+products
+merch
+buy
+sell
+market
+marketplace
+
+# --- User / Account Related ---
+my
+account
+accounts
+profile
+user
+users
+login
+signin
+signup
+register
+auth
+oauth
+sso # Single Sign-On
+id
+identity
+password
+forgot
+reset
+
+# --- Mobile / App Related ---
+m
+mobile
+mobi
+app
+apps
+ios
+android
+pwa
+api-mobile
+
+# --- Specific Services / Platforms ---
+db
+database
+mysql
+postgres
+mongo
+redis
+sql
+oracle
+backup-db
+git
+svn
+jira
+confluence
+sharepoint
+salesforce
+hubspot
+wordpress
+wp
+drupal
+joomla
+magento
+assets-wp
+
+# --- Marketing / Sales ---
+marketing
+sales
+promo
+campaigns
+ads
+affiliate
+partner
+crm
+analytics
+tracking
+go
+link
+links
+shortlink
+click
+metrics
+
+# --- Communication / Social ---
+chat
+irc
+jabber
+xmpp
+voip
+sip
+conference
+meet
+video
+voice
+social
+feed
+connect
+community
+
+# --- Geographic / Location (Examples, can be expanded) ---
+us
+uk
+de
+fr
+jp
+au
+ca
+ny
+london
+tokyo
+eu
+asia
+us-east-1
+us-west-2
+europe-west1
+# (Many more possible if geo-targeting)
+
+# --- Security Related ---
+secure
+ssl
+tls
+vpn-server
+auth-server
+pki
+waf
+ids
+ips
+honeypot
+security
+compliance
+gdpr
+certs
+
+# --- Various Utilities / Other ---
+archive
+backup
+calendar
+cname # Often used for aliasing
+data
+fileserver
+games
+group
+int # Short for internal/integration
+lab
+legacy
+mailgw
+maps
+member
+metrics
+office
+online
+owa # Outlook Web Access
+owa-test
+owa-dev
+partner
+portal-test
+private
+projects
+radius
+records
+reports
+research
+resources
+scripts
+search # Can be different from main search
+service-desk
+stats-server
+survey
+sync
+sys
+temp
+tmp
+tools
+training
+translate
+update # For update servers
+utility
+webdisk
+webmail-test
+webmin
+wiki-internal
+work
+apps
+autodiscover # (Repeated, common for mail)
+backup-server
+vpn # (Repeated, common)
+billing # (Repeated, common)
+# ... many more generic words ...
+
+# --- Single Letter (Sometimes used for short links or specific services) ---
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+# m (already listed)
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w # Often www, but sometimes just 'w'
+x
+y
+z
+
+# --- Numerics (Sometimes used) ---
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+# (Can combine with prefixes like server1, node2 etc.)
+
+# --- Common Typos / Variations ---
+wwwn # Typo for www
+backup1
+backup2
+dev1
+dev2
+test1
+test2
+admin1
+admin2
+mail-backup
+email-backup
+myaccount
+my-account
+web-log
+log-server
+
+# --- Financial/Banking (Use with caution, target specific) ---
+# (Only if you have explicit permission for financial institution testing)
+# onlinebanking
+# ib
+# internetbanking
+# mobilebanking
+# corporatebanking
+# wealth
+# trading
+# fx
+# loans
+# cards
+# invest
+
+# --- Education (Target specific) ---
+# lms
+# moodle
+# blackboard
+# canvas
+# studentportal
+# facultyportal
+# library
+# admissions
+# alumni
+
+# --- Healthcare (Target specific, HIGHLY SENSITIVE, HIPAA etc.) ---
+# (NEVER scan without EXTREME explicit authorization)
+# patientportal
+# emr
+# ehr
+# telehealth
+# HIE
+# dicom
+# pacs
+
+# --- Common Subdomains that might be CNAMEs to external services ---
+# (These might resolve but point to a third-party service)
+statuspage # e.g., statuspage.io
+helpcenter # e.g., zendesk, freshdesk
+# Heroku apps (random-words-1234) - harder to guess
+# AWS S3 buckets (bucket-name.s3.amazonaws.com) - specific format
+# GitHub Pages (username.github.io)
+
+# --- More technical / less common but possible ---
+ldap
+kerberos
+radius-server
+ntp # Network Time Protocol
+puppet
+chef
+ansible
+consul
+vault
+etcd
+zookeeper
+kafka
+rabbitmq
+elasticsearch
+solr
+kibana
+spark
+hadoop
+hdfs
+webdav
+owa # (repeated, common)
+autodiscover # (repeated, common)
+lyncdiscover # For Lync/Skype for Business
+sip # Session Initiation Protocol (VoIP)
+sips
+siptrunk
+moodle # (repeated if educational context)
+vpnaccess
+vpnportal
+vpnclient
+remoteaccess
+rdp # Remote Desktop Protocol (usually not web, but sometimes proxied)
+vdi # Virtual Desktop Infrastructure
+citrix
+netscaler
+owa # (repeated)
+autodiscover # (repeated)
+vpn # (repeated)
+ftp # (repeated)
+dev # (repeated)
+test # (repeated)
+stage # (repeated)
+prod # (repeated)
+api # (repeated)
+admin # (repeated)
+blog # (repeated)
+shop # (repeated)
+mail # (repeated)
+smtp # (repeated)
+pop # (repeated)
+imap # (repeated)
+webmail # (repeated)
+ns1 # (repeated)
+ns2 # (repeated)
+www # (repeated)
+# More prefixes based on services
+jira-dev
+confluence-dev
+git-dev
+jenkins-master
+jenkins-slave
+db-master
+db-slave
+db-backup
+api-gateway
+auth-service
+user-service
+product-service
+order-service
+payment-service
+# More descriptive common names
+customer-portal
+partner-portal
+employee-portal
+developer-portal
+support-portal
+self-service
+webaccess
+securelogin
+appserver
+webserver
+database-server
+files-server
+assets-server
+cdn-assets
+static-content
+user-content
+# Variations of www
+www-dev
+www-stage
+www-test
+www-old
+# Internal/Intranet specific often not externally resolvable but good for internal tests
+intranet-dev
+internal-apps
+hr-portal
+finance-portal
+it-support
+helpdesk # Can be internal or external
+# Cloud provider specific (generic parts)
+origin-prod
+origin-stage
+edge
+edge-prod
+content-delivery
+# Simple numbers that sometimes are used for round-robin or specific instances
+s1
+s2
+s3
+web1
+web2
+app1
+app2
+db1
+db2
+# More specific application names (examples, would depend on common apps)
+owa # (repeated)
+phpmyadmin # (Usually a path, but sometimes a subdomain)
+pgadmin
+grafana-prod
+prometheus-prod
+# Country specific TLDs as subdomains (less common but seen)
+co-uk # if main domain is example.com, then co-uk.example.com
+# More abstract terms
+alpha-api
+beta-app
+gamma-service
+delta-db
+epsilon-cache
+zeta-log
+# Service discovery related
+_sip._tcp
+_xmpp-client._tcp
+# Email security related
+dkim._domainkey
+_dmarc
+# Active Directory related (usually internal)
+gc._msdcs # Global Catalog
+_kerberos._tcp.dc._msdcs
+_ldap._tcp.dc._msdcs
+# VMware related (usually internal)
+vcenter
+esx
+esxi
+# Backup / DR
+dr # Disaster Recovery
+bcdr # Business Continuity Disaster Recovery
+backup-site
+failover
+standby
+# More generic dev/test
+dev-01
+dev-02
+test-01
+test-02
+stage-01
+stage-02
+uat-01
+uat-02
+# Common for CDNs or specific entry points
+entry
+access
+point
+connect
+# Academic / Research
+lab-server
+research-data
+conference-portal
+# Government specific (examples)
+public-records
+city-services
+# Wildcard catch-alls (to test if wildcard is configured)
+# These are unlikely to exist but help detect wildcards if they all resolve to same IP
+thisshouldnotexist
+randomsubdomaintest
+doesthisresolve
+# Simple verb based
+get
+set
+post
+put
+delete
+find
+create
+update
+read
+list
+view
+manage
+# Adjectives often used with servers/services
+main-server
+primary-db
+backup-storage
+secure-gateway
+# Common CMS subdomains
+tryjoomla
+trydrupal
+trywordpress
+# IoT related (less common for general web, but for specific targets)
+iot-gateway
+device-api
+mqtt
+# Gaming related
+game-server
+auth-game
+stats-game
+leaderboard
+# Financial Transaction related (use carefully)
+txn
+transaction
+api-payment
+# Learning Management
+lms-prod
+lms-dev
+# Business Intelligence
+bi
+reports-bi
+analytics-bi
+# VoIP/Communication
+pbx
+asterisk
+freeswitch
+teams # If using MS Teams custom domain
+# More functional names
+calendar-service
+notification-service
+file-storage
+image-processing
+video-streaming
+# Common for specific cloud services or SaaS integrations
+sso.client # For SSO integrations
+mdm # Mobile Device Management
+# Simple variations
+web-services
+api-services
+# Single word generic terms
+core
+engine
+platform
+hub
+base
+data
+cache
+queue
+stream
+# Software specific subdomains (if known target uses specific software)
+# Example: if target uses Atlassian suite
+jira.internal
+confluence.internal
+bitbucket.internal
+# More variations
+www-new
+dev-site
+test-site
+prod-site
+# Placeholder/Default names
+placeholder
+default-site
+example
+# Common abbreviations
+mgmt # Management
+conf # Conference / Configuration
+appdev # Application Development
+webdev # Web Development
+sys # System
+net # Network
+info # Information
+svc # Service
+# More variations of mail/webmail
+emailaccess
+mailserver
+securemail
+# For internal tools or specific access points
+internal-tools
+dev-access
+admin-console
+# For testing different SSL/TLS configurations
+ssl-test
+tls-check
+# Common for affiliate programs
+affiliates-portal
+partner-program
+# For customer feedback or surveys
+feedback
+survey-tool
+# For file versioning or repositories
+repo
+version-control
+# Backup systems or DR sites
+dr-site
+backup-portal
+# Multi-region prefixes
+us-east
+us-west
+eu-central
+ap-south
+# Specific application related
+erp # Enterprise Resource Planning
+hrm # Human Resource Management
+# Common for VPN gateways
+gateway-vpn
+secure-access
+# For testing purposes
+testbed
+poc # Proof of Concept
+# Analytics and tracking
+piwik # Matomo (formerly Piwik)
+matomo
+# Job boards / Career portals
+apply
+talent
+# Legacy systems
+legacy-app
+old-system
+# For API documentation
+api-docs
+developer-docs
+# For status pages
+system-status
+service-health
+# For payment gateways (if self-hosted portion)
+payment-gateway
+checkout-api
+# For internal communication/forums
+discussion
+internal-forum
+# Marketing automation
+ma
+mktg
+# Common for project management
+projects-portal
+pm
+# For training portals
+learning
+training-center
+# Common for single sign-on redirects or identity providers
+idp
+login-sso
+# File sharing specific
+send
+sharefile
+# More variations on common names
+web-app
+api-server
+db-server
+# For specific functions like user management
+usermgmt
+identity-management
+# For CI/CD pipelines
+ci-cd-server
+build-server
+# For security operations
+soc # Security Operations Center
+siem # Security Information and Event Management
+# For IoT device management
+device-management
+iot-platform
+# Generic terms related to data
+data-analytics
+data-warehouse
+data-lake
+# Common for helpdesk systems
+supportcenter
+servicedesk
+# For internal development environments
+dev-env
+test-env
+# For marketing landing pages
+landing
+campaign-page
+# For managing licenses
+license-server
+activation
+# For specific regional access
+uk-site
+us-site
+# Common for web application firewalls
+waf-prod
+waf-staging
+# For different environments
+production-api
+staging-api
+development-api
+# For mobile app backends
+mobile-backend
+app-api
+# Common for specific services like chat
+chat-server
+messaging
+# For internal wikis or knowledge bases
+internal-wiki
+kb-internal
+# For financial reporting
+finance-reports
+billing-portal
+# For partner or vendor portals
+vendor-portal
+# For specific cloud functions or serverless endpoints
+functions
+lambda
+# Common for versioned APIs
+v1-api
+v2-api
+v3-api
+# For internal testing or QA environments
+qa-server
+qa-app
+# For specific data centers or regions
+dc1
+dc2
+region1
+region2
+# For content management systems
+cms-admin
+cms-editor
+# Common for customer relationship management
+crm-app
+crm-api
+# For specific internal services
+internal-service1
+internal-service2
+# For testing different software versions
+beta-v1
+beta-v2
+# For managing SSL certificates
+certs-server
+ssl-admin
+# Common for specific industries (e.g., real estate)
+listings
+property
+# For managing user roles and permissions
+access-control
+role-management
+# For specific data processing tasks
+data-processing
+batch
+# Common for internal communication platforms
+intranet-chat
+internal-messaging
+# For specific software development tools
+git-repo
+svn-server
+# For testing different network configurations
+net-test
+config-test
+# Common for specific types of content
+video-archive
+image-gallery
+# For managing domain names and DNS records
+dns-admin
+domain-management
+# For specific internal applications
+app-internal1
+app-internal2
+# For testing different security policies
+sec-policy-test
+firewall-test
+# Common for specific data storage solutions
+storage-array
+nas
+# For managing software licenses and subscriptions
+license-manager
+subscription-portal
+# For specific business units or departments
+hr-dept
+finance-dept
+# Common for testing different operating systems
+linux-test
+windows-test
+# For managing virtual machines
+vm-host
+vcenter-server # (repeated)
+# For specific internal tools or utilities
+util-server
+tools-internal
+# Common for specific types of APIs
+rest-api
+graphql-api
+# For managing user accounts and authentication
+auth-api
+user-auth
+# For specific development frameworks or platforms
+node-app
+python-app
+# Common for specific database systems
+mysql-db
+postgres-db
+# For managing network devices
+router-config
+switch-admin
+# For specific internal reporting tools
+reports-internal
+analytics-dashboard
+# Common for testing different browser versions
+ie-test
+chrome-test
+# For managing cloud resources
+cloud-admin
+aws-console # (usually aws domain, but for custom portals)
+# For specific security tools or dashboards
+sec-dashboard
+vuln-scan # (usually a tool name)
+# Common for specific types of servers
+web-server1
+app-server1
+# For managing software updates and patches
+update-server
+patch-management
+# For specific internal training materials
+training-docs
+learning-portal # (repeated)
+# Common for specific data backup solutions
+backup-db-server
+file-backup
+# For managing user sessions and cookies
+session-server
+cookie-domain
+# For specific internal project management tools
+project-tracker
+task-manager
+# Common for testing different mobile devices
+android-test
+ios-test
+# For managing network security policies
+firewall-policy
+ips-config
+# For specific internal collaboration tools
+collab-space
+team-docs
+# For specific data visualization tools
+viz-dashboard
+data-studio # (usually google domain)
+# Common for managing SSL/TLS certificates (repeated for emphasis)
+cert-manager
+pki-server
+# For specific internal search engines
+internal-search
+enterprise-search
+# For managing API keys and tokens
+api-key-manager
+token-service
+# For specific testing environments
+sandbox-env
+dev-sandbox
+# Common for specific types of applications
+saas-app # Software as a Service
+paas-platform # Platform as a Service
+# For managing user feedback and support tickets
+support-tickets
+feedback-portal
+# For specific internal development tools or IDEs
+dev-ide
+code-server
+# Common for specific types of databases
+nosql-db
+graph-db
+# For managing network traffic and load balancing
+loadbalancer-admin
+traffic-manager
+# For specific internal analytics tools
+internal-analytics
+usage-stats
+# For testing different screen resolutions
+res-test
+display-check
+# For managing cloud storage
+cloud-storage
+s3-bucket-proxy # (if proxied)
+# For specific security testing tools or platforms
+pentest-server
+attack-range
+# For specific types of content delivery networks
+cdn-origin
+cdn-edge
+# For managing user identities and access management
+iam-server # Identity and Access Management
+# For specific internal development frameworks
+dev-framework
+test-framework
+# Common for specific types of databases
+timeseries-db
+geospatial-db
+# For managing network configurations and devices
+netconfig-server
+device-inventory
+# For specific internal reporting and business intelligence tools
+bi-portal
+report-generator
+# For testing different API versions
+api-v1-test
+api-v2-test
+# For managing cloud infrastructure and services
+cloud-infra
+iaas-portal # Infrastructure as a Service
+# For specific security information and event management systems
+siem-console
+log-aggregator
+# For managing IoT devices and data
+iot-data
+device-registry
+# Common for specific types of web servers
+nginx-server
+apache-server
+# For managing software deployments and releases
+deploy-server
+release-manager
+# For specific internal training platforms and materials
+skill-portal
+course-manager
+# For specific data backup and recovery solutions
+dr-backup
+recovery-point
+# For managing user authentication and authorization
+oauth-server
+openid-connect
+# For specific internal project collaboration tools
+project-wiki
+taskboard
+# For testing different mobile operating systems
+android-emulator
+ios-simulator
+# For managing network security groups and rules
+nsg-admin
+firewall-rules
+# For specific internal data visualization and dashboarding tools
+dashboard-builder
+chart-server
+# For managing SSL/TLS certificate lifecycle
+cert-renewal
+pki-admin
+# For specific internal search and discovery tools
+discovery-service
+search-index
+# For managing API gateways and proxies
+api-proxy
+gateway-config
+# For specific testing and quality assurance environments
+qa-env
+staging-env # (repeated)
+# Common for specific types of applications
+crm # (repeated)
+erp # (repeated)
+# For managing user feedback and feature requests
+feature-requests
+user-voice
+# For specific internal development tools and utilities
+debug-server
+profiler
+# For specific types of databases
+keyvalue-store
+document-db
+# For managing network bandwidth and quality of service
+qos-manager
+bandwidth-control
+# For specific internal analytics and A/B testing tools
+abtest-platform
+experiment-server
+# For testing different virtual private networks
+vpn-test
+ipsec-test
+# For managing cloud billing and cost optimization
+cloud-cost
+billing-optimizer
+# For specific security assessment and vulnerability management tools
+vuln-manager
+sec-scanner
+# For specific types of content management and delivery
+headless-cms
+content-api
+# For managing user roles and access policies
+policy-admin
+access-manager
+# For specific internal development and testing frameworks
+bdd-framework # Behavior-Driven Development
+tdd-runner # Test-Driven Development
+# For specific types of data storage and archival
+cold-storage
+archive-server
+# For managing network monitoring and alerting
+alert-manager
+monitoring-console
+# For specific internal communication and notification services
+notification-hub
+message-broker
+# For specific software build and integration tools
+build-pipeline
+ci-server # (repeated)
+# For testing different web browsers and rendering engines
+webkit-test
+gecko-test
+# For managing cloud identity and federation
+federation-server
+saml-idp
+# For specific security operations and incident response
+incident-response
+soc-tools
+# For managing IoT device connectivity and protocols
+mqtt-broker # (repeated)
+coap-server
+# For specific types of web application servers
+tomcat-server
+jboss-server
+# For managing software configuration and secrets
+config-server
+secrets-manager # (e.g. HashiCorp Vault if custom domain)
+# For specific internal training and e-learning platforms
+elearning-portal
+lms-custom # (repeated)
+# For specific data replication and synchronization solutions
+db-replication
+syn
