@@ -1,127 +1,139 @@
 import requests
-import os # For potential future path handling, though not strictly needed here yet
+import os
+import colorama # Assuming you use colorama here too for consistency
+
+# Initialize colorama if you use it within this logic file directly
+# colorama.init(autoreset=True) # Or handle init in main_launcher.py
 
 # --- Configuration ---
-WORDLIST_FILE = 'list.txt'
-REQUEST_TIMEOUT = 5  # seconds
+# The DEFAULT_WORDLIST_FILE is now relative to this script's directory, inside 'wordlists'
+DEFAULT_WORDLIST_FILE = os.path.join('wordlists', 'large_subdomain_list.txt')
+REQUEST_TIMEOUT = 5
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+CHECK_PROTOCOLS = ['https', 'http']
 
-def display_banner():
-    """Displays the tool's banner and credits."""
-    print("----------------------------------------------------")
-    print("           Subdirectory Scanner by Markhor-Nyx      ")
-    print("         Copyright (C) Markhor-Nyx. All rights reserved.    ")
-    print("----------------------------------------------------\n")
+def load_wordlist(script_file_path):
+    """
+    Loads subdomains from the wordlist file.
+    The wordlist path is resolved relative to the script_file_path's directory.
+    """
+    base_dir = os.path.dirname(script_file_path) # Get directory of this script
+    filepath = os.path.join(base_dir, DEFAULT_WORDLIST_FILE)
 
-def load_wordlist(filepath):
-    """Loads directories from the specified wordlist file."""
     if not os.path.exists(filepath):
-        print(f"[!] Error: Wordlist file '{filepath}' not found.")
+        print(f"{colorama.Fore.RED}[!] Error: Wordlist file '{filepath}' not found.")
         return None
     try:
         with open(filepath, 'r') as f:
-            # Read lines, strip whitespace, and filter out empty lines
-            directories = [line.strip() for line in f if line.strip()]
-        if not directories:
-            print(f"[!] Warning: Wordlist file '{filepath}' is empty.")
+            subdomains = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+        if not subdomains:
+            print(f"{colorama.Fore.YELLOW}[!] Warning: Wordlist file '{filepath}' is empty or only has comments.")
             return []
-        return directories
+        return subdomains
     except Exception as e:
-        print(f"[!] Error reading wordlist file '{filepath}': {e}")
+        print(f"{colorama.Fore.RED}[!] Error reading wordlist file '{filepath}': {e}")
         return None
 
-def scan_domain(domain, directories):
+def clean_domain_input(domain_input):
+    clean = domain_input.lower().strip()
+    clean = clean.replace("https://", "").replace("http://", "")
+    if clean.count('.') >= 1:
+        parts = clean.split('.')
+        if parts[0] == 'www' and len(parts) > 2:
+             clean = ".".join(parts[1:])
+    return clean.rstrip('/')
+
+def perform_scan(base_domain, subdomains_list):
     """
-    Scans the given domain for subdirectories listed in the directories list.
-    Tries both HTTP and HTTPS.
+    Performs the actual subdomain scanning logic.
+    (This is the renamed scan_subdomains function from previous examples)
     """
-    if not domain:
-        print("[!] Error: No domain provided for scanning.")
-        return
+    print(f"{colorama.Fore.CYAN}[*] Starting subdomain scan for: {base_domain}")
+    # Wordlist path is now handled by load_wordlist relative to this script
+    print(f"{colorama.Fore.CYAN}[*] Using wordlist: {DEFAULT_WORDLIST_FILE} (relative to scanner script)")
+    print(f"{colorama.Fore.CYAN}[*] Checking {len(subdomains_list)} potential subdomains...\n")
 
-    print(f"[*] Starting scan for domain: {domain}")
-    print(f"[*] Using wordlist: {WORDLIST_FILE}")
-    print(f"[*] Checking {len(directories)} potential subdirectories...\n")
-
-    found_count = 0
-    protocols = ['https', 'http'] # Try HTTPS first
-
-    # Remove any existing protocol and trailing slashes from user input
-    clean_domain = domain.replace("https://", "").replace("http://", "").rstrip('/')
-
+    found_subdomains_details = [] # Store (url, status_code, final_url if redirected)
+    headers = {'User-Agent': USER_AGENT}
     first_found_header_printed = False
 
-    for directory in directories:
-        # Ensure directory itself doesn't have leading/trailing slashes to avoid double slashes
-        clean_directory = directory.strip('/')
-        if not clean_directory: # Skip if directory entry was just slashes or empty
-            continue
+    for sub in subdomains_list:
+        if not sub: continue
+        fqdn = f"{sub}.{base_domain}"
 
-        for protocol in protocols:
-            url = f"{protocol}://{clean_domain}/{clean_directory}"
+        for protocol in CHECK_PROTOCOLS:
+            url_to_check = f"{protocol}://{fqdn}"
             try:
-                headers = {'User-Agent': USER_AGENT}
-                response = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT, allow_redirects=True) # allow_redirects=True is default
+                response = requests.get(url_to_check, headers=headers, timeout=REQUEST_TIMEOUT, allow_redirects=True)
+                status_code = response.status_code
+                final_url_after_redirect = response.url # Will be same as url_to_check if no redirect
 
-                # Check for common success or "exists but forbidden" codes
-                if response.status_code == 200:
+                if 200 <= status_code < 400 or status_code == 401 or status_code == 403:
                     if not first_found_header_printed:
-                        print("[+] Found URLs:")
+                        print(f"{colorama.Fore.GREEN}[+] Found potential live subdomains:")
                         first_found_header_printed = True
-                    print(f"  [+] {url} (Status: 200 OK)")
-                    found_count += 1
-                    break # Found with this protocol, no need to check other protocol for this directory
-                elif response.status_code == 403:
-                    if not first_found_header_printed:
-                        print("[+] Found URLs (or indications of existence):")
-                        first_found_header_printed = True
-                    print(f"  [?] {url} (Status: 403 Forbidden - Likely exists but access denied)")
-                    found_count += 1
-                    break # Indication found, no need to check other protocol
-
-                # You could add checks for other status codes if relevant (e.g., 301/302 if allow_redirects=False)
-
+                    
+                    status_info = f"(Status: {status_code})"
+                    redirect_info = ""
+                    if response.history: # If there were redirects
+                         if base_domain not in final_url_after_redirect:
+                             redirect_info = f" (Redirected to: {final_url_after_redirect})"
+                    
+                    print(f"  {colorama.Fore.GREEN}[+] {url_to_check} {status_info}{redirect_info}")
+                    found_subdomains_details.append((url_to_check, status_code, final_url_after_redirect))
+                    break 
             except requests.exceptions.Timeout:
-                # print(f"  [-] Timeout for: {url}") # Uncomment for verbose output
                 pass
             except requests.exceptions.ConnectionError:
-                # print(f"  [-] Connection error for: {url}") # Uncomment for verbose output
-                # This can happen if the domain or subdomain doesn't resolve or server is down
-                # Breaking here for this directory might be reasonable if one protocol fails to connect
-                break
-            except requests.exceptions.RequestException as e:
-                # print(f"  [-] Error for {url}: {e}") # Uncomment for verbose output
-                pass # Catch any other requests-related errors
+                pass
+            except requests.exceptions.RequestException:
+                pass
 
-    if found_count == 0:
-        print("\n[-] No subdirectories found from the list for the specified domain.")
+    if not found_subdomains_details:
+        print(f"\n{colorama.Fore.YELLOW}[-] No live subdomains found from the list for '{base_domain}'.")
     else:
-        print(f"\n[*] Scan complete. Found {found_count} potential item(s).")
+        print(f"\n{colorama.Fore.GREEN}[*] Scan complete. Found {len(found_subdomains_details)} potential live subdomain(s).")
+    return found_subdomains_details # Return list of found details
 
-def main():
-    """Main function to run the subdirectory scanner."""
-    display_banner()
+def run_subdomain_scan():
+    """
+    Main function to be called by the launcher.
+    It handles user input and orchestrates the scan.
+    """
+    # Initialize colorama here if not done globally in launcher
+    # import colorama 
+    # colorama.init(autoreset=True)
 
-    target_domain = input("Enter the target domain (e.g., example.com): ").strip()
-    if not target_domain:
-        print("[!] No domain entered. Exiting.")
+    print(colorama.Fore.BLUE + "--- Markhor-Nyx Subdomain Scanner ---")
+    domain_input = input(colorama.Fore.MAGENTA + "Enter the ROOT domain name (e.g., example.com): " + colorama.Style.RESET_ALL).strip()
+    
+    if not domain_input:
+        print(f"{colorama.Fore.RED}[!] No domain entered. Aborting scan." + colorama.Style.RESET_ALL)
         return
 
-    directories_list = load_wordlist(WORDLIST_FILE)
-    if directories_list is None: # Indicates a fatal error in loading wordlist
-        print("[!] Could not load wordlist. Exiting.")
-        return
-    if not directories_list: # Indicates wordlist was empty but loaded
-        print("[!] Wordlist is empty. Nothing to scan. Exiting.")
+    base_domain = clean_domain_input(domain_input)
+    if not base_domain:
+        print(f"{colorama.Fore.RED}[!] Invalid domain format after cleaning. Aborting." + colorama.Style.RESET_ALL)
         return
 
+    print(f"{colorama.Fore.CYAN}[*] Target base domain set to: {base_domain}")
 
-    scan_domain(target_domain, directories_list)
+    # __file__ gives the path of the current script (scanner_logic.py)
+    # This ensures load_wordlist finds the wordlist relative to this script.
+    subdomains_from_list = load_wordlist(os.path.abspath(__file__)) 
+    
+    if subdomains_from_list is None: # Fatal error loading
+        print(f"{colorama.Fore.RED}[!] Could not load wordlist. Aborting scan." + colorama.Style.RESET_ALL)
+        return
+    if not subdomains_from_list: # Empty list
+        print(f"{colorama.Fore.YELLOW}[!] Wordlist is empty. Nothing to scan." + colorama.Style.RESET_ALL)
+        return
 
+    perform_scan(base_domain, subdomains_from_list)
+
+# This allows testing scanner_logic.py directly if needed
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("\n[!] Scan aborted by user (Ctrl+C). Exiting.")
-    except Exception as e:
-        print(f"\n[!] An unexpected error occurred: {e}")
+    # If running this script directly, initialize colorama
+    import colorama
+    colorama.init(autoreset=True)
+    run_subdomain_scan()
