@@ -1,0 +1,100 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+ENV/
+VENV/
+pip-freeze.txt
+pip-selfcheck.json
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib60/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.manifest
+*.spec
+
+# PyInstaller
+# Обычно создаются PyInstaller в корневой папке проекта (например, `pipenv` делает это),
+# игнорируем их здесь.
+*.manifest
+*.spec
+
+# IPython Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env.bak
+venv.bak
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains / IntelliJ
+.idea/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Log files
+*.log
+logs/
+
+# Node.js (for Discord Nuke Bot or other Node.js tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json # Agar aap sirf package.json track karna chahte hain, warna isko rehne dein
+
+# Sensitive Information / Configuration Files (EXAMPLES - APNE HISAB SE ADD KAREIN)
+# KABHI BHI ASLI KEYS YA PASSWORDS IS FILE MEIN NA LIKHEIN,
+# SIRF UN FILES KE NAAM LIKHEIN JINMEIN YEH INFORMATION HO SAKTI HAI.
+config.ini
+secrets.json
+api_keys.txt
+.env.* # For files like .env.local, .env.development
+
+# Database files (if any locally)
+*.sqlite3
+*.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Cache files from tools (agar aapke tools koi cache banate hain)
+.cache*/
+tool_cache/
