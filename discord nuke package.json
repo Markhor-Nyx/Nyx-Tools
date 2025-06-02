@@ -1,0 +1,23 @@
+{
+  "name": "nuke-bot-markhor-nyx", // Optional: rename package
+  "version": "1.0.0",
+  "description": "A Discord server nuking utility.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon index.js"
+    // "build": "npm install" // Removed as it's not standard build step
+  },
+  "keywords": ["discord", "nuke", "bot", "moderation-tool"],
+  "author": "Markhor-Nyx", // UPDATED
+  "license": "ISC", // Consider a more explicit license like MIT if you plan to share widely
+  "dependencies": {
+    "chalk": "^4.1.2", // v4 is fine, v5 is latest major
+    "discord.js": "^14.11.0", // Good
+    "prompt-sync": "^4.2.0", // Good
+    "visa2discord": "^1.0.20" // Your custom package
+  },
+  "devDependencies": { // nodemon is usually a dev dependency
+    "nodemon": "^2.0.22"
+  }
+}
